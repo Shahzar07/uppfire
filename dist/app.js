@@ -4,7 +4,7 @@ const $=(s,p=document)=>p.querySelector(s), $$=(s,p=document)=>[...p.querySelect
 const reduced=matchMedia('(prefers-reduced-motion: reduce)');
 const finePointer=matchMedia('(hover:hover) and (pointer:fine)');
 const WHATSAPP='923305078441';
-let paused=reduced.matches, framePending=false, selectedService='Social media management';
+let paused=reduced.matches, framePending=false, selectedService='Not sure yet';
 const quiet=()=>paused||reduced.matches;
 // Centre a child inside its own horizontal scroller without moving the page.
 function centerIn(row,child){if(!row||!child||row.scrollWidth<=row.clientWidth)return;row.scrollTo({left:child.offsetLeft-(row.clientWidth-child.offsetWidth)/2,behavior:quiet()?'auto':'smooth'})}
@@ -33,12 +33,12 @@ const riseObserver=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.is
 $$('[data-rise]').forEach(el=>quiet()?el.classList.add('is-risen'):riseObserver.observe(el));
 
 // Goals stay attached to their own CTA so exploring another section cannot lose them.
-const goals={launch:{service:'Creative + performance',brief:'Goal: Launch something new.\nFocus: A clear story, brand, design & video assets, and a launch plan.\n\nMy brand, audience, and launch idea: '},scale:{service:'Paid social & search',brief:'Goal: Grow what is working.\nFocus: A campaign review, a content calendar, and focused paid media.\n\nCurrent campaigns, audience, and growth goal: '},refresh:{service:'Graphic design & branding',brief:'Goal: Refresh the creative.\nFocus: A new creative direction, a logo & identity refresh, and a coherent asset family.\n\nExisting brand, audience, and creative challenge: '}};
-let selectedGoal='launch';
-const goalLabels={launch:'Launch something new',scale:'Grow what’s working',refresh:'Refresh the creative'};
+const goals={wedding:{service:'Wedding business: video editing + social media',brief:'Industry: Wedding business.\nServices: Wedding video editing + social media management.\n\nOur business, the footage we have, and what we need: '},estate:{service:'Real estate business: Meta Ads, video, social & design',brief:'Industry: Real estate.\nServices: Meta Ads, video editing, social media management, graphic design.\n\nOur listings, market, and lead goals: '}};
+let selectedGoal='wedding';
+const goalLabels={wedding:'Wedding business',estate:'Real estate business'};
 $$('[data-goal]').forEach(button=>button.addEventListener('click',()=>{
  selectedGoal=button.dataset.goal;
- $$('[data-goal]').forEach(b=>{const chosen=b===button;b.setAttribute('aria-pressed',String(chosen));b.replaceChildren(document.createTextNode(chosen?'Direction selected ':'Choose this direction '),Object.assign(document.createElement('span'),{textContent:chosen?'✓':'↗'}));b.lastElementChild.setAttribute('aria-hidden','true')});
+ $$('[data-goal]').forEach(b=>{const chosen=b===button;b.setAttribute('aria-pressed',String(chosen));b.replaceChildren(document.createTextNode(chosen?'Industry selected ':'Choose this industry '),Object.assign(document.createElement('span'),{textContent:chosen?'✓':'↗'}));b.lastElementChild.setAttribute('aria-hidden','true')});
  $$('[data-goal-card]').forEach(card=>card.classList.toggle('is-selected',card.dataset.goalCard===selectedGoal));
  $('#goal-selection-label').textContent=goalLabels[selectedGoal];
  $('[data-goal-project]').dataset.interest=goals[selectedGoal].service;
@@ -95,9 +95,9 @@ document.addEventListener('focusin',e=>{const wrap=e.target.closest('[data-fligh
 // The signal wall depicts the real service mix: six disciplines, three creative and three media.
 const signalWall=$('.signal-wall'),signalButtons=$$('[data-signal]'),signalRows=$$('.signal-row'),footerStudio=$('.footer-studio');
 const signalViews={
- all:{count:6,unit:'disciplines.',statement:'One direction. Forward.',description:'Social, design, logos, video, and performance. Connected around what your business needs next.',detail:'Six services. One connected team.',service:'Creative + performance'},
- creative:{count:3,unit:'disciplines.',statement:'Make the first impression count.',description:'Graphic design & branding, logo design, and video editing. The craft that makes your story feel unmistakably yours.',detail:'Design & branding + logos + video editing.',service:'Graphic design & branding'},
- media:{count:3,unit:'disciplines.',statement:'Reach the people who matter.',description:'Social media management, paid social, and paid search. A consistent feed, the right audience, and a focused distribution plan.',detail:'Social media + paid social + paid search.',service:'Paid social & search'}
+ all:{count:2,unit:'industries.',statement:'One creative direction.',description:'We create focused digital solutions for wedding and real estate businesses — from scroll-stopping videos to social media and lead-generating campaigns.',detail:'Two industries. Four core services.',service:'Not sure yet'},
+ wedding:{count:2,unit:'services.',statement:'Capture the moment.',description:'Wedding video editing and social media management. Cinematic highlights, reels and teasers, posted and managed so your work keeps being seen.',detail:'Video editing + social media management.',service:'Wedding business: video editing + social media'},
+ estate:{count:4,unit:'services.',statement:'Sell the possibility.',description:'Meta Ads, video editing, social media management and graphic design. Property tours, listings and campaigns built to generate real estate leads.',detail:'Meta Ads + video editing + social media + graphic design.',service:'Real estate business: Meta Ads, video, social & design'}
 };
 let signalView='all',signalFrame=false,signalCountSettled=false,signalTimer;
 function renderSignalMotion(){
@@ -106,7 +106,7 @@ function renderSignalMotion(){
  const entrance=Math.max(0,Math.min(1,(vh*.72-rect.top)/(vh*.86)));
  signalWall.style.setProperty('--signal-p',quiet()?0:p.toFixed(4));
  signalWall.classList.toggle('signal-visible',rect.bottom>0&&rect.top<vh);
- if(!signalCountSettled){signalWall.style.setProperty('--digit',quiet()?6:(6*(1-Math.pow(1-entrance,3))).toFixed(4));if(quiet()||entrance>=1)signalCountSettled=true}
+ if(!signalCountSettled){signalWall.style.setProperty('--digit',quiet()?signalViews.all.count:(signalViews.all.count*(1-Math.pow(1-entrance,3))).toFixed(4));if(quiet()||entrance>=1)signalCountSettled=true}
  const signature=$('.footer-signature').getBoundingClientRect();
  const reveal=Math.max(0,Math.min(1,(vh-signature.top)/(Math.max(1,signature.height)*.9)));
  footerStudio.style.setProperty('--footer-reveal',quiet()?1:reveal.toFixed(4));
@@ -184,6 +184,7 @@ viewer.addEventListener('keydown',e=>{if(e.target.closest('video'))return;if(e.k
 viewer.addEventListener('close',()=>{figure.querySelectorAll('video').forEach(v=>v.pause());figure.replaceChildren();document.body.style.overflow='';viewerTrigger?.focus?.({preventScroll:true})});
 let swipe;figure.addEventListener('pointerdown',e=>{if(e.pointerType==='touch')swipe={x:e.clientX,y:e.clientY}});
 figure.addEventListener('pointerup',e=>{if(!swipe)return;const dx=e.clientX-swipe.x,dy=e.clientY-swipe.y;swipe=null;if(Math.abs(dx)>50&&Math.abs(dx)>Math.abs(dy)*1.3)stepViewer(dx<0?1:-1)});
+$$('[data-open-cat]').forEach(b=>b.addEventListener('click',()=>openViewer(b.dataset.openCat,0,b)));
 $$('[data-proof]').forEach(b=>b.addEventListener('click',()=>{const [cat,i]=b.dataset.proof.split(':');openViewer(cat,+i,b)}));
 
 // The portfolio follows a real ellipse: every step moves all cards around the ring.

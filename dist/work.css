@@ -212,3 +212,75 @@ nav .nav-contact{color:#ffb27f}nav .nav-contact span{color:#ffb27f}
 .logo-specimen{width:150px;height:51px}
 }
 @media(prefers-reduced-motion:reduce){.intro{display:none}.hero-line,.hero-bottom,.hero-meta,.hero-symbol .wordmark-fill{animation:none!important}.rise-inner{transform:none!important;transition:none!important}.cursor-badge{display:none}.films-panel,#work-viewer[open],.viewer-figure>*{animation:none!important}.hero-scroll i:after{animation:none}}
+
+/* ---------- SEO revision: wedding × real estate ---------- */
+.signal-wall{--digit:2}
+.hero .hero-seo{font-family:Ease,Arial,sans-serif;font-size:12px;letter-spacing:.14em;text-transform:uppercase;line-height:1.5;color:#5c5c55;max-width:none;margin:0 auto 20px;text-wrap:balance;animation:hero-fade 1s var(--ease) both;animation-delay:var(--intro-delay)}
+.hero-display{font-family:Reckless,Georgia,serif;font-weight:400;letter-spacing:-.045em;line-height:1.03;font-size:clamp(48px,4.3vw,68px);text-align:center;max-width:1000px;text-wrap:balance}
+.hero-display span{display:inline-block}
+.hero-ctas{display:flex;align-items:center;gap:22px;flex-wrap:wrap;justify-content:center}
+.hero-link{font-size:14px;color:#2a2a26;border-bottom:1px solid #2a2a2655;padding:6px 0;transition:color .2s,border-color .2s}.hero-link:hover{color:#b53912;border-color:#b53912}
+@media(min-width:1600px){.hero-display{font-size:72px}}
+@media(max-width:700px){.hero .hero-seo{font-size:10px;letter-spacing:.1em;margin-bottom:14px;padding:0 10px}.hero-display{font-size:clamp(38px,9vw,54px);letter-spacing:-.055em}.hero-ctas{gap:14px}}
+@media(max-width:380px){.hero-display{font-size:36px}}
+@media(prefers-reduced-motion:reduce){.hero .hero-seo{animation:none}}
+/* industries split */
+.industries{padding:110px max(32px,calc((100vw - 1440px)/2)) 100px;background:#e9e9e7;background-image:radial-gradient(#34342c13 .85px,transparent 1px);background-size:15px 15px;scroll-margin-top:90px}
+.industries-head{display:grid;grid-template-columns:1.2fr 1fr;gap:8%;align-items:end;margin-bottom:48px}
+.industries-head .section-label{grid-column:1 / -1;display:block;margin-bottom:0;color:#74746b;font-size:11px}
+.industries-head h2{font-size:clamp(46px,5vw,80px);line-height:1}.industries-head h2 em{color:#b53912;font-weight:400}
+.industries-head p{color:#5e5e55;font-size:16px;line-height:1.7;padding-bottom:8px}.industries-head p strong{font-weight:400;color:#1d1d18}
+.industry-split{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.industry-panel{position:relative;display:block;min-height:560px;border-radius:16px;overflow:hidden;color:#f6f2ea;isolation:isolate;background:#1b1a18}
+.industry-panel img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.4s var(--ease);z-index:-2}
+.industry-panel:after{content:'';position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,#0b0b0a10 30%,#0b0b0ad9 100%)}
+.industry-panel:hover img{transform:scale(1.05)}
+.industry-body{position:absolute;left:0;right:0;bottom:0;padding:34px 36px;display:flex;flex-direction:column;gap:10px}
+.industry-k{font-size:10px;letter-spacing:.14em;color:#ffb48a}
+.industry-panel h3{font-family:Reckless,Georgia,serif;font-weight:400;font-size:clamp(40px,4.4vw,68px);letter-spacing:-.045em;line-height:1}
+.industry-services{font-size:14px;color:#d8d2c8;line-height:1.5}
+.industry-cta{align-self:flex-start;margin-top:8px;font-size:13px;border:1px solid #ffffff40;border-radius:40px;padding:10px 16px;transition:background .3s,color .3s,border-color .3s}
+.industry-panel:hover .industry-cta{background:#ff6a30;border-color:#ff6a30;color:#1a120c}
+.industry-panel:focus-visible{outline:2px solid #c73812;outline-offset:4px}
+/* impact row in the work heading */
+.impact-row{list-style:none;display:flex;justify-content:center;flex-wrap:wrap;gap:10px 34px;margin:26px auto 0;padding:0;color:#b5afa7;font-size:13px}
+.impact-row b{font-weight:400;color:#ff9a64;margin-right:8px;letter-spacing:.06em;text-transform:uppercase;font-size:11px}
+.motion-portfolio .portfolio-heading h2{font-size:clamp(42px,4.6vw,76px)}
+/* films */
+.films-deliverables{display:flex;flex-wrap:wrap;align-items:center;gap:8px 16px;margin:0 0 22px;font-size:14px;color:#cfc8bd}
+.films-deliverables span{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#ffb48a}
+.films-deliverables a{margin-left:auto;color:#ffb27f;font-size:13px}.films-deliverables a:hover{text-decoration:underline;text-underline-offset:4px}
+.films-end{display:flex;flex-direction:column;align-items:center;gap:6px;margin-top:40px;padding-top:30px;border-top:1px solid #ffffff12}.films-end .films-note{margin:0;padding:0;border:0}
+/* services */
+.cap-more p a{text-decoration:underline;text-underline-offset:3px}
+.service-split{display:grid;grid-template-columns:1fr 1fr;gap:18px;max-width:1100px;margin:56px auto 0}
+.service-split>div{border:1px solid #c2c3b9;border-radius:12px;background:#f2f2eb;padding:24px 26px;display:flex;flex-direction:column;gap:10px}
+.service-split span{font-size:10px;letter-spacing:.12em;color:#b53912}.service-split p{font-size:18px;letter-spacing:-.02em;line-height:1.4}
+.service-split a{font-size:13px;color:#a83210;margin-top:auto}.service-split a:hover{text-decoration:underline;text-underline-offset:4px}
+/* who we work with */
+.ambition-grid.ambition-two{grid-template-columns:repeat(2,minmax(0,1fr))}
+.ambition-two>.arrival-wrap:nth-child(2){margin-top:40px}
+.goal-plan li b{font-weight:400;color:#2a2c22}
+/* workflow */
+.workflow{padding-top:110px;padding-bottom:40px;scroll-margin-top:90px}
+.workflow-head{display:grid;grid-template-columns:1.2fr 1fr;gap:8%;align-items:end;margin-bottom:48px}
+.workflow-head .section-label{grid-column:1 / -1;display:block;margin-bottom:0}
+.workflow-head h2{font-size:clamp(46px,5vw,80px)}.workflow-head h2 em{color:#b53912;font-weight:400}
+.workflow-head p{font-size:20px;letter-spacing:-.02em;line-height:1.4;color:#4f4f47;padding-bottom:8px}
+.workflow-steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;counter-reset:none}
+.workflow-steps li{border-top:2px solid #181817;padding:22px 4px 0;display:flex;flex-direction:column;gap:12px}
+.workflow-steps li>span{font-size:11px;color:#b53912;letter-spacing:.08em}
+.workflow-steps h3{font-family:Reckless,Georgia,serif;font-weight:400;font-size:40px;letter-spacing:-.04em;line-height:1}
+.workflow-steps p{font-size:15px;line-height:1.6;color:#5e5e55;max-width:30ch}
+.difference-bottom{margin-top:30px;font-size:18px;line-height:1.5;color:#4f4f47;letter-spacing:-.01em}
+/* footer */
+.footer-directory.footer-directory-seo{grid-template-columns:1.3fr .9fr .9fr .8fr 1fr}
+.footer-contact a[href^=mailto]{word-break:break-all}
+@media(max-width:1050px){.industries-head,.workflow-head{grid-template-columns:1fr;gap:22px}.industry-panel{min-height:460px}.workflow-steps{grid-template-columns:repeat(2,minmax(0,1fr));gap:30px 18px}.footer-directory.footer-directory-seo{grid-template-columns:1fr 1fr 1fr}.footer-directory-seo .footer-about{grid-column:1 / -1}}
+@media(max-width:700px){.industries{padding:75px 20px 65px}.industries-head{margin-bottom:30px}.industries-head h2,.workflow-head h2{font-size:44px}.industry-split{grid-template-columns:1fr;gap:14px}.industry-panel{min-height:400px;border-radius:12px}.industry-body{padding:24px 22px}.industry-panel h3{font-size:42px}
+.impact-row{flex-direction:column;align-items:center;gap:8px;font-size:12px}.motion-portfolio .portfolio-heading h2{font-size:clamp(36px,9.6vw,54px)}
+.films-deliverables a{margin-left:0;width:100%}
+.service-split{grid-template-columns:1fr;margin-top:36px}.service-split p{font-size:16px}
+.ambition-grid.ambition-two{display:flex;flex-direction:column}.ambition-two>.arrival-wrap:nth-child(2){margin-top:0}
+.workflow{padding:70px 20px 30px}.workflow-head p{font-size:17px}.workflow-steps{grid-template-columns:1fr;gap:26px}.workflow-steps h3{font-size:34px}
+.footer-directory.footer-directory-seo{grid-template-columns:1fr 1fr}.footer-directory-seo .footer-about{grid-column:span 2}.footer-directory-seo .footer-contact{grid-column:span 2}}

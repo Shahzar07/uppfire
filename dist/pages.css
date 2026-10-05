@@ -1,0 +1,37 @@
+/* SEO service pages: share the homepage tokens, header, footer and reveal system. */
+.svc-page{background:#e9e9e7}
+.svc-hero{padding:190px max(32px,calc((100vw - 1240px)/2)) 90px;background:#e9e9e7;background-image:radial-gradient(#24242118 1px,transparent 1.2px);background-size:15px 15px}
+.svc-crumbs{position:static;display:flex;flex-wrap:wrap;align-items:center;gap:8px;font-size:12px;color:#6c6c64;margin-bottom:46px;background:none;box-shadow:none;border-radius:0;padding:0}.svc-crumbs a{display:inline;padding:0;border:0;font-size:12px}.svc-crumbs a:hover{color:#b53912;text-decoration:underline;text-underline-offset:3px}
+.svc-hero .section-label{display:block;color:#b53912;font-size:11px;margin-bottom:24px}
+.svc-hero h1{font-size:clamp(52px,6.6vw,108px);line-height:.98;letter-spacing:-.05em;max-width:14ch}
+.svc-lead{font-size:20px;line-height:1.55;letter-spacing:-.015em;color:#3c3c36;max-width:52ch;margin-top:34px}
+.svc-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:30px}.svc-chips span{font-size:12px;border:1px solid #bdbdb6;border-radius:40px;padding:8px 14px;background:#f4f4ee}
+.svc-ctas{display:flex;flex-wrap:wrap;align-items:center;gap:22px;margin-top:38px}
+.svc-work{background:#0f0f0e;color:#f1efe8;padding:100px max(32px,calc((100vw - 1440px)/2)) 90px}
+.svc-work h2{font-size:clamp(40px,4.4vw,70px);max-width:18ch}
+.svc-media-note{color:#9c958b;font-size:14px;margin-top:16px}
+.svc-media-grid{display:grid;gap:16px;margin-top:44px}
+.svc-media-films{grid-template-columns:repeat(3,minmax(0,1fr))}
+.svc-media-reels{grid-template-columns:repeat(4,minmax(0,1fr))}
+.svc-media{margin:0}.svc-media video{display:block;width:100%;border-radius:12px;background:#1b1a18;object-fit:cover}
+.svc-media-film video{aspect-ratio:16/9}.svc-media-reel video{aspect-ratio:9/16}
+.svc-media figcaption{font-size:13px;color:#cfc8bd;margin-top:10px}
+.svc-includes{padding:110px max(32px,calc((100vw - 1440px)/2)) 70px}
+.svc-includes-head{display:grid;grid-template-columns:1.1fr 1fr;gap:8%;align-items:end;margin-bottom:46px}
+.svc-includes-head .section-label{grid-column:1 / -1;display:block;margin-bottom:0}
+.svc-includes-head h2{font-size:clamp(46px,5vw,80px)}.svc-includes-head h2 em{color:#b53912;font-weight:400}
+.svc-who{font-size:18px;line-height:1.55;color:#4f4f47;padding-bottom:8px}
+.svc-includes-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.svc-includes-grid article{background:#f4f4ee;border:1px solid #c6c6bf;border-radius:12px;padding:26px 26px 28px;scroll-margin-top:110px}
+.svc-includes-grid h3{font-weight:400;font-size:22px;letter-spacing:-.025em;margin-bottom:12px}
+.svc-includes-grid p{font-size:15px;line-height:1.6;color:#5e5e55}.svc-includes-grid p a{color:#a83210;text-decoration:underline;text-underline-offset:3px}
+.svc-steps{padding-top:60px}
+.svc-related{padding:10px max(32px,calc((100vw - 1440px)/2)) 90px}.svc-related .section-label{display:block;margin-bottom:22px}
+.svc-related>div{display:flex;flex-wrap:wrap;gap:12px}
+.svc-related a{font-size:15px;border:1px solid #bdbdb6;border-radius:40px;padding:12px 18px;background:#f4f4ee;transition:background .3s,color .3s,border-color .3s}
+.svc-related a:hover{background:#ff6a30;border-color:#ff6a30;color:#1a120c}
+.svc-page .footer-project{text-decoration:none}
+@media(max-width:1050px){.svc-includes-head{grid-template-columns:1fr;gap:20px}.svc-includes-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.svc-media-reels{grid-template-columns:repeat(3,minmax(0,1fr))}.svc-media-films{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:700px){.svc-hero{padding:150px 20px 60px}.svc-crumbs{margin-bottom:32px;font-size:11px}.svc-hero h1{font-size:46px}.svc-lead{font-size:17px;margin-top:24px}
+.svc-work{padding:70px 20px 60px}.svc-work h2{font-size:38px}.svc-media-films{grid-template-columns:1fr}.svc-media-reels{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.svc-includes{padding:70px 20px 40px}.svc-includes-head h2{font-size:44px}.svc-includes-grid{grid-template-columns:1fr}.svc-related{padding:0 20px 60px}}

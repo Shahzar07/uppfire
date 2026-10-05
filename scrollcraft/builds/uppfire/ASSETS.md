@@ -30,3 +30,6 @@ All Melius reference images, the product film and their poster were removed from
 - `assets/films/*`: 45-second excerpts (1280px H.264, fades in and out), 6-second silent loops and posters cut from six full-length 4K films in the client's Dropbox folder. Full films are available from the studio on request.
 - `assets/reels/estate-0*.mp4`: the seven real-estate reels in the client's Drive "video editing" folder, re-encoded at 720px. Six arrived as Pinterest downloads (`*_pindown.io_*`); confirm the studio edited them before treating them as its own work.
 - Results numbers are transcribed from the screenshots shown in the viewer (Instagram insights, Meta Ads Manager, Shopify). Empty Drive folders: logos, content calendar, social media management. The content-calendar view is a sample month laid out with real posts and says so.
+
+## Revision 7 — SEO positioning (weddings × real estate)
+Copy follows the client's "Uppfire_SEO_Website_Content.docx": homepage title, meta description and H1, the 15 content screens, FAQ, and five recommended service pages. `assets/reels/estate-house.webp` is a caption-free frame from the "Built above the tide" property reel, used on the real-estate industry panel.
