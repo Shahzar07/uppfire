@@ -47,3 +47,14 @@ Intended feel: curiosity, delight, clarity, confidence, resolve. A rendered feel
 - Eight new bitmap files successfully downloaded and individually inspected. Portfolio reference credit is visible.
 - Melius DOM and public hero asset list inspected. Its WebGL hero remained blank in the reference browser, so matching its exact rendered animation is not claimed.
 - Standalone review regenerated. No browser QA or end-to-end tests of Uppfire run because Sites requires an explicit testing request.
+
+## Revision 6
+- Browser QA run with Playwright/Chromium at 1440×900 and 390×844 (touch) and with prefers-reduced-motion: intro, hero, signal filters, portfolio ring and chips, work viewer (image, calendar, landscape and vertical video, keyboard and thumbnails), films and reels tabs, results counters and proof screenshots, brief dialog → WhatsApp tab. No page errors or console errors.
+- Fixed during QA: page jump from chip scrollIntoView, viewer width forced by the thumbnail strip, nested-viewBox logo offset, joined words where a hidden `<br>` had no following space.
+- Reduced motion: no intro, headlines and cards settled, counters show final values, no ambient loops autoplay.
+- Not verified: real-device iOS/Android autoplay, wa.me deep link on phones (the sandbox cannot reach WhatsApp; the tab opens with the composed URL).
+
+## Revision 7
+- Homepage and five service pages: one H1 each, titles 40–63 characters, meta descriptions 118–153 characters, canonical + Open Graph tags, valid JSON-LD (ProfessionalService with offer catalog, WebSite, FAQPage, Service, BreadcrumbList). No duplicate IDs, broken in-page anchors, broken internal links or missing assets.
+- Playwright/Chromium at 1440×900 and 390×844: homepage flow (portfolio viewer, films and reels, results proof, brief → WhatsApp), the signal-wall Weddings / Real estate tabs (2 and 4 services), the industry selector filling the brief, and service pages (breadcrumb, media grids, FAQ). No page or console errors.
+- `uppfire.com` has no DNS records yet, so canonical URLs point at a domain that does not resolve until it is connected.
