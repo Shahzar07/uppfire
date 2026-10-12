@@ -1,0 +1,19 @@
+{
+  "name": "uppfire",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Uppfire static agency site: motion design and performance marketing.",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "start": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^6.3.5"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

@@ -5,3 +5,14 @@ Static premium agency site adapted to the user's Melius reference. `dist/` is th
 The site has semantic content, locally hosted reference fonts/media, responsive compositions, reduced-motion support, service tabs, native FAQ disclosures, and a project brief download. It has no contact inbox or server-side lead capture. Campaign imagery is identified as concept references, not Uppfire client work.
 
 Design notes, reference asset provenance and verification limits are in `scrollcraft/builds/uppfire/`.
+
+## Local development
+
+```sh
+npm install
+npm run dev      # serve dist/ with live reload
+npm run build    # optimized copy in build/
+npm run preview  # serve the build
+```
+
+Static hosting can keep serving `dist/` directly; no build step is required.
