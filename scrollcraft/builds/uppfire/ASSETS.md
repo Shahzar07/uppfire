@@ -21,3 +21,15 @@ Eight public hero images from the user-specified Melius reference, downloaded lo
 - `dist/assets/visual-16.webp`: https://www.melius.com/images/hero/hero-16.webp
 - `dist/assets/visual-20.webp`: https://www.melius.com/images/hero/hero-20.webp
 - `dist/assets/visual-24.webp`: https://www.melius.com/images/hero/hero-24.webp
+
+## Revision 6 — real client work replaces reference imagery
+All Melius reference images, the product film and their poster were removed from `dist/assets`. Every visual now on the site was supplied by the Uppfire team.
+- Brand mark: `assets/brand/uppfire-logo*.svg`, the inline `#uf-logo` symbol and `favicon.svg` are vector redraws of the supplied Uppfire logo (orange second "p" with flame ribbon). Letterforms are outlines of Poppins ExtraBold Italic (SIL Open Font License); the ribbon is a hand-fitted path. No font file is shipped.
+- `assets/work/*.webp`: client's Google Drive portfolio folders (Graphic design, Branding, paid social creatives, ads result), resized to 1600px / 720px WebP. One duplicate design and two screenshots that show private people's handles or comments were left out.
+- `assets/work/logo-uppfire-wall.webp`: the supplied 3D logo mockup. `logo-bunboy-variations` and `logo-bunboy-lockups` are crops of the Bun Boy guideline boards.
+- `assets/films/*`: 45-second excerpts (1280px H.264, fades in and out), 6-second silent loops and posters cut from six full-length 4K films in the client's Dropbox folder. Full films are available from the studio on request.
+- `assets/reels/estate-0*.mp4`: the seven real-estate reels in the client's Drive "video editing" folder, re-encoded at 720px. Six arrived as Pinterest downloads (`*_pindown.io_*`); confirm the studio edited them before treating them as its own work.
+- Results numbers are transcribed from the screenshots shown in the viewer (Instagram insights, Meta Ads Manager, Shopify). Empty Drive folders: logos, content calendar, social media management. The content-calendar view is a sample month laid out with real posts and says so.
+
+## Revision 7 — SEO positioning (weddings × real estate)
+Copy follows the client's "Uppfire_SEO_Website_Content.docx": homepage title, meta description and H1, the 15 content screens, FAQ, and five recommended service pages. `assets/reels/estate-house.webp` is a caption-free frame from the "Built above the tide" property reel, used on the real-estate industry panel.
