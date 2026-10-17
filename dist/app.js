@@ -126,8 +126,10 @@ renderSignalMotion();addEventListener('scroll',requestSignalMotion,{passive:true
 // The real portfolio. Every piece below is client work supplied by the studio.
 const W='/assets/work/',F='/assets/films/',R='/assets/reels/';
 const img=(name,cap)=>({type:'image',src:`${W}${name}.webp`,thumb:`${W}${name}-sm.webp`,cap});
-const films=[['rob-jade','Manor in bloom'],['hillside','Golden hour on the hill'],['vineyard','Under the arch'],['lauren-ben','Old beams, new beginnings'],['garden-vows','Garden vows'],['rena-birthday','A little rodeo']].map(([s,t],i)=>({type:'video',src:`${F}${s}.mp4`,thumb:`${F}${s}.webp`,cap:`${i===5?'Celebration film':'Wedding film'} — ${t}. A 45-second excerpt.`}));
-const reels=['The first walkthrough','An island property story','The agent, on camera','Harbour-front tour','Waterfront living','Built above the tide','Room by room'].map((t,i)=>({type:'video',vertical:true,src:`${R}estate-0${i+1}.mp4`,thumb:`${R}estate-0${i+1}.webp`,cap:`Property reel — ${t}.`}));
+const cardVideo=(slug,title,id)=>({type:'embed',src:`https://drive.google.com/file/d/${id}/preview`,link:`https://drive.google.com/file/d/${id}/view`,thumb:`/assets/cards/${slug}.webp`,cap:title});
+const films=[cardVideo("wedding-mimi-hayden","Mimi & Hayden","19A6kcImYC1Pp0mNk3YiOCxoxRkfV20m2"),cardVideo("wedding-michelle","Michelle","1ucxYm0KeRX02tqBe7vFi4FnBKqe2vtJf"),cardVideo("wedding-samantha-luke","Samantha + Luke","1oT6IukWaWPPpEkLpneynebM-QQtvRr2n")];
+const reels=[cardVideo("estate-bali","Bali home","1MbEQGvQ3RyDIFF-FUcf4ySh84_x7YGud"),cardVideo("estate-k2c","K2C Remodeling","1w-mKZ86wf4SVGdABjZhJeDJgji704nBN"),cardVideo("estate-tour","Property showcase","11y-wA-mMDoYLnKufIjMslvleE4iBRtyW")];
+const socialClips=[cardVideo("social-01","Social reel 1","1RjXWJwwX778rKiKU0D-VnpNfvSoWXbmY"),cardVideo("social-02","Social reel 2","1CezZp1kD98REXsdyfRLkO97I3i6Fraib"),cardVideo("social-03","Social reel 3","1ENvkDsKl6PDz65L6v6m5Mm2Fj6yGJeP9")];
 const portfolio={
  design:{kind:'Graphic design',title:'Say it in one glance',items:[img('design-bakistry-lotus','Bakistry — Lotus cheesecake jar.'),img('design-bakistry-crumbly','Bakistry — Crumbly cheesecake delight.'),img('design-manso-summer','Manso — the new summer collection.'),img('design-manso-arrival-ar','Manso — “Just arrived”, Arabic edition.'),img('design-manso-arrival','Manso — New arrival.'),img('design-dainely-belt','Dainely — let your belt handle it.'),img('design-dainely-back','Dainely — your lower back is the engine.'),img('design-edvana','Edvana Online Institute — subjects and enrolment.'),img('design-carousel','Interior studio — Instagram carousel.')]},
  brand:{kind:'Branding',title:'A name, remembered',items:[img('brand-bunboy-scene','Bun Boy — the full identity, in one scene.'),img('brand-bunboy-hero','Bun Boy — “Big. Juicy. Unstoppable.”'),img('brand-bunboy-bags','Bun Boy — takeaway bags.'),img('brand-bunboy-box','Bun Boy — premium burger box and dieline.'),img('brand-bunboy-apron','Bun Boy — staff aprons.'),img('brand-bunboy-menu','Bun Boy — menu, front and back.'),img('brand-bunboy-poster','Bun Boy — “Not your average burger.”'),img('brand-bunboy-guide-red','Bun Boy — brand guidelines: logo, palette, type.'),img('brand-bunboy-guide','Bun Boy — brand guidelines, black and yellow edition.')]},
@@ -135,9 +137,11 @@ const portfolio={
  video:{kind:'Video editing',title:'Frame by frame, better',items:[...films,...reels]},
  logo:{kind:'Logos',title:'Seen once, known forever',items:[img('logo-uppfire-wall','Uppfire — the studio’s own mark.'),img('logo-bunboy-logo','Bun Boy — primary logo.'),img('logo-bunboy-variations','Bun Boy — primary, black, white, yellow and icon versions.'),img('logo-bunboy-lockups','Bun Boy — horizontal lockup and single-colour versions.')]},
  paid:{kind:'Paid social creative',title:'Built to be clicked',items:[img('paid-reddish-winter','Reddish — winter collection, in just Rs 4,199.'),img('paid-reddish-collection','Reddish — winter collection, just Rs 3,799.'),img('paid-reddish-floral','Reddish — new floral, in just Rs 1,499.'),img('paid-freshtaa-sale','Freshtaa Wear — mid-summer sale, up to 50% off.'),img('paid-falcon-christmas','Falcon Edge — Christmas Day sale, flat 30% off.')]},
- results:{kind:'Performance / ads result',title:'The numbers don’t lie',items:[img('results-views-106k','Instagram — 106,774 views in 30 days, 99.1% from ads.'),img('results-reach-111k','Meta Ads — 111,568 reach at Rs 11.62 per result.'),img('results-sales-shopify','Online store — Rs 2,292,296 gross sales from 962 orders in 12 months.'),img('results-demographics','Meta Ads — 4,286 people reached, 75 messaging conversations.'),img('results-messaging','Meta Ads — 22 conversations started at Rs 49.19 each.'),img('results-campaigns','Meta Ads Manager — 874 purchases at a 4.21 average ROAS.')]},
- social:{kind:'Social media management',title:'Same time, every time',items:[img('social-insights-7d','Instagram — 2,460 views in 7 days; accounts reached up 495.7%.'),img('social-insights-30d','Instagram — 8,811 views in 30 days; 6,063 accounts reached, up 15,057.5%.'),img('social-insights-reach','Instagram — 6,297 accounts reached, up 17,891.4%.')]}
+ results:{kind:'Performance / ads result',title:'The numbers don’t lie',items:[img('results-views-106k','Instagram — 106,774 views in 30 days, 99.1% from ads.'),img('results-reach-111k','Meta Ads — 111,568 reach at Rs 11.62 per result.'),img('results-sales-shopify','Online store — Rs 2,292,296 gross sales from 962 orders in 12 months.'),img('results-demographics','Meta Ads — 4,286 people reached, 75 messaging conversations.'),img('results-messaging','Meta Ads — 22 conversations started at Rs 49.19 each.'),img('results-campaigns-october','Meta Ads Manager — 874 purchases at a 4.21 average ROAS.')]},
+ social:{kind:'Social media content',title:'Content built to stop the scroll.',items:socialClips},
+ socialResults:{kind:'Social media management',title:'Same time, every time',items:[img('social-insights-7d','Instagram — 2,460 views in 7 days; accounts reached up 495.7%.'),img('social-insights-30d','Instagram — 8,811 views in 30 days; 6,063 accounts reached, up 15,057.5%.'),img('social-insights-reach','Instagram — 6,297 accounts reached, up 17,891.4%.')]}
 };
+[...reels,...films].forEach(item=>{const slug=item.thumb.split('/').pop().replace('.webp','');portfolio[slug]={kind:slug.startsWith('estate-')?'Real estate video':'Wedding video editing',title:item.cap,items:[item]}});
 // A sample month built from the studio's real posts.
 function calendarBoard(){
  const posts=[['design-bakistry-lotus','Product'],['paid-reddish-winter','Offer'],['design-manso-arrival','Launch'],['design-dainely-back','Story'],['brand-bunboy-hero','Campaign'],['paid-freshtaa-sale','Offer'],['design-edvana','Enrolment'],['design-bakistry-crumbly','Product'],['paid-reddish-floral','Offer'],['design-dainely-belt','Story'],['design-manso-summer','Collection'],['paid-falcon-christmas','Seasonal']];
@@ -162,6 +166,7 @@ function renderViewer(){
  figure.querySelectorAll('video').forEach(v=>v.pause());
  let el;
  if(item.type==='calendar')el=calendarBoard();
+ else if(item.type==='embed'){el=document.createElement('div');el.className='viewer-embed';const iframe=Object.assign(document.createElement('iframe'),{src:item.src,title:item.cap,allow:'autoplay; fullscreen; picture-in-picture',referrerPolicy:'strict-origin-when-cross-origin'});iframe.setAttribute('allowfullscreen','');const fallback=Object.assign(document.createElement('a'),{href:item.link,target:'_blank',rel:'noopener',textContent:'Open video in a new tab ↗'});el.append(iframe,fallback)}
  else if(item.type==='video'){el=Object.assign(document.createElement('video'),{src:item.src,poster:item.thumb,controls:true,playsInline:true,preload:'metadata'});if(item.vertical)el.classList.add('is-vertical');el.setAttribute('aria-label',item.cap);el.play().catch(()=>{})}
  else{el=Object.assign(document.createElement('img'),{src:item.src,alt:item.cap,decoding:'async'})}
  figure.replaceChildren(el);
@@ -174,14 +179,14 @@ function openViewer(cat,index=0,trigger=document.activeElement){
  viewerCat=cat;viewerIndex=index;viewerTrigger=trigger;
  thumbs.replaceChildren(...portfolio[cat].items.map((item,i)=>{const b=document.createElement('button');b.setAttribute('aria-label',`Show piece ${i+1}: ${item.cap}`);if(item.thumb)b.append(Object.assign(document.createElement('img'),{src:item.thumb,alt:'',loading:'lazy'}));else{b.classList.add('thumb-text');b.textContent='Month'}b.addEventListener('click',()=>{viewerIndex=i;renderViewer()});return b}));
  renderViewer();
- if(!viewer.open)viewer.showModal();document.body.style.overflow='hidden';
+ if(!viewer.open)viewer.showModal();document.body.style.overflow='hidden';syncOrbitFilm();loopCards.forEach(card=>wake(card,false));
  $('.viewer-close').focus({preventScroll:true});
 }
 function stepViewer(d){const n=portfolio[viewerCat].items.length;viewerIndex=(viewerIndex+d+n)%n;renderViewer()}
 $('.viewer-prev').addEventListener('click',()=>stepViewer(-1));$('.viewer-next').addEventListener('click',()=>stepViewer(1));
 $('.viewer-close').addEventListener('click',()=>viewer.close());
 viewer.addEventListener('keydown',e=>{if(e.target.closest('video'))return;if(e.key==='ArrowRight'){e.preventDefault();stepViewer(1)}if(e.key==='ArrowLeft'){e.preventDefault();stepViewer(-1)}});
-viewer.addEventListener('close',()=>{figure.querySelectorAll('video').forEach(v=>v.pause());figure.replaceChildren();document.body.style.overflow='';viewerTrigger?.focus?.({preventScroll:true})});
+viewer.addEventListener('close',()=>{figure.querySelectorAll('video').forEach(v=>v.pause());figure.replaceChildren();document.body.style.overflow='';syncOrbitFilm();loopCards.forEach(card=>wake(card,card.inView&&autoplay(card)));viewerTrigger?.focus?.({preventScroll:true})});
 let swipe;figure.addEventListener('pointerdown',e=>{if(e.pointerType==='touch')swipe={x:e.clientX,y:e.clientY}});
 figure.addEventListener('pointerup',e=>{if(!swipe)return;const dx=e.clientX-swipe.x,dy=e.clientY-swipe.y;swipe=null;if(Math.abs(dx)>50&&Math.abs(dx)>Math.abs(dy)*1.3)stepViewer(dx<0?1:-1)});
 $$('[data-open-cat]').forEach(b=>b.addEventListener('click',()=>openViewer(b.dataset.openCat,0,b)));
@@ -209,11 +214,11 @@ function orbitTick(time){
  paintOrbit();orbitFrame=requestAnimationFrame(orbitTick);
 }
 function syncOrbitFilm(){
- orbitCards.forEach((card,i)=>{const film=$('.orbit-film',card);if(!film)return;if(!quiet()&&orbitVisible&&!document.hidden&&i===orbitIndex){film.preload='auto';film.play().then(()=>card.classList.add('is-playing')).catch(()=>{})}else film.pause()});
+ orbitCards.forEach((card,i)=>{const film=$('.orbit-film',card);if(!film)return;if(!quiet()&&orbitVisible&&!document.hidden&&!viewer.open&&i===orbitIndex){if(!film.getAttribute('src'))film.src=film.dataset.loop;film.play().then(()=>{if(!film.paused)card.classList.add('is-playing')}).catch(()=>{})}else{film.pause();card.classList.remove('is-playing')}});
 }
 function rotateBy(steps){
  orbitIndex=((orbitIndex+steps)%orbitCards.length+orbitCards.length)%orbitCards.length;orbitTarget-=steps*orbitStep;
- orbitCards.forEach((card,i)=>{card.classList.toggle('is-active',i===orbitIndex);card.setAttribute('aria-hidden',String(i!==orbitIndex))});
+ orbitCards.forEach((card,i)=>{card.classList.toggle('is-active',i===orbitIndex);card.setAttribute('aria-hidden',String(i!==orbitIndex));$('.orbit-open',card).tabIndex=i===orbitIndex?0:-1});
  orbitChips.forEach((chip,i)=>chip.setAttribute('aria-pressed',String(i===orbitIndex)));
  centerIn($('.orbit-index'),orbitChips[orbitIndex]);
  const selected=orbitCards[orbitIndex].dataset,set=portfolio[selected.cat];
@@ -246,7 +251,7 @@ new IntersectionObserver(entries=>{document.body.classList.toggle('near-footer',
 orbitTrack.classList.add('is-ready');rotateBy(0);paintOrbit();
 
 // Films & reels: silent loops wake on hover or when on screen; a click opens the full excerpt with sound.
-function wake(card,on){const v=$('video',card);if(!v)return;if(on&&!quiet()){if(!v.src)v.src=v.dataset.loop;v.play().then(()=>card.classList.add('is-playing')).catch(()=>{})}else{v.pause();card.classList.remove('is-playing')}}
+function wake(card,on){const v=$('video',card);if(!v)return;if(on&&!quiet()&&!viewer.open&&!document.hidden){if(!v.getAttribute('src'))v.src=v.dataset.loop;v.play().then(()=>{if(!v.paused)card.classList.add('is-playing')}).catch(()=>{})}else{v.pause();card.classList.remove('is-playing')}}
 const loopCards=$$('.film-card,.reel-card');
 const autoplay=card=>card.classList.contains('film-feature')||card.classList.contains('reel-card')||!finePointer.matches;
 const loopObserver=new IntersectionObserver(entries=>entries.forEach(e=>{e.target.inView=e.isIntersecting;if(autoplay(e.target))wake(e.target,e.isIntersecting&&!e.target.closest('[hidden]'))}),{threshold:.6});
@@ -256,6 +261,7 @@ loopCards.forEach(card=>{loopObserver.observe(card);
  card.addEventListener('click',()=>{if(card.dataset.film)openViewer('video',+card.dataset.film,card);else openViewer('video',films.length+(+card.dataset.reel),card)});
 });
 document.addEventListener('uppfire:motion',()=>loopCards.forEach(card=>wake(card,!quiet()&&card.inView&&autoplay(card))));
+document.addEventListener('visibilitychange',()=>loopCards.forEach(card=>wake(card,card.inView&&autoplay(card))));
 const filmTabs=$$('.films-tabs [role=tab]');
 filmTabs.forEach(tab=>tab.addEventListener('click',()=>{filmTabs.forEach(t=>{const on=t===tab;t.setAttribute('aria-selected',String(on));t.tabIndex=on?0:-1;$('#'+t.getAttribute('aria-controls')).hidden=!on});
  loopCards.forEach(card=>{const visible=!card.closest('[hidden]');if(!visible)wake(card,false);else if(card.inView&&autoplay(card))wake(card,true)});updateRail()}));
