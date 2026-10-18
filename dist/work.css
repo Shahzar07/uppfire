@@ -299,3 +299,12 @@ nav .nav-contact{color:#ffb27f}nav .nav-contact span{color:#ffb27f}
 .viewer-embed iframe{width:100%;height:100%;border:0;background:#000;border-radius:8px}
 .viewer-embed a{justify-self:center;color:#ffb27f;font-size:12px;text-decoration:underline;text-underline-offset:3px}
 @media(max-width:700px){.motion-portfolio .orbit-stage{height:435px}}
+
+/* The two replacement films keep their full original frame, including hover. */
+.orbit-card[data-cat="wedding-flyn"] .orbit-image,.orbit-card[data-cat="estate-tour"] .orbit-image{background:#090909}
+.orbit-card[data-cat="wedding-flyn"] .orbit-image img,.orbit-card[data-cat="wedding-flyn"] .orbit-film,.orbit-card[data-cat="estate-tour"] .orbit-image img,.orbit-card[data-cat="estate-tour"] .orbit-film{object-fit:contain;transform:none!important;animation:none!important}
+.film-grid-supplied [data-film="0"],.reel-card[data-reel="2"]{aspect-ratio:auto;display:flex;flex-direction:column}
+.film-grid-supplied [data-film="0"] .film-media,.reel-card[data-reel="2"] .film-media{position:relative;inset:auto;width:100%;aspect-ratio:9/16;flex-shrink:0}
+.film-grid-supplied [data-film="0"] .film-media img,.film-grid-supplied [data-film="0"] .film-media video,.reel-card[data-reel="2"] .film-media img,.reel-card[data-reel="2"] .film-media video{object-fit:contain;background:#090909;transform:none!important}
+.film-grid-supplied [data-film="0"] .film-meta,.reel-card[data-reel="2"] .film-meta{position:relative;inset:auto;background:#1b1a18;width:100%}
+.film-grid-supplied [data-film="0"]:after,.reel-card[data-reel="2"]:after{display:none}

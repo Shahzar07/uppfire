@@ -127,8 +127,8 @@ renderSignalMotion();addEventListener('scroll',requestSignalMotion,{passive:true
 const W='/assets/work/',F='/assets/films/',R='/assets/reels/';
 const img=(name,cap)=>({type:'image',src:`${W}${name}.webp`,thumb:`${W}${name}-sm.webp`,cap});
 const cardVideo=(slug,title,id)=>({type:'embed',src:`https://drive.google.com/file/d/${id}/preview`,link:`https://drive.google.com/file/d/${id}/view`,thumb:`/assets/cards/${slug}.webp`,cap:title});
-const films=[cardVideo("wedding-mimi-hayden","Mimi & Hayden","19A6kcImYC1Pp0mNk3YiOCxoxRkfV20m2"),cardVideo("wedding-michelle","Michelle","1ucxYm0KeRX02tqBe7vFi4FnBKqe2vtJf"),cardVideo("wedding-samantha-luke","Samantha + Luke","1oT6IukWaWPPpEkLpneynebM-QQtvRr2n")];
-const reels=[cardVideo("estate-bali","Bali home","1MbEQGvQ3RyDIFF-FUcf4ySh84_x7YGud"),cardVideo("estate-k2c","K2C Remodeling","1w-mKZ86wf4SVGdABjZhJeDJgji704nBN"),cardVideo("estate-tour","Property showcase","11y-wA-mMDoYLnKufIjMslvleE4iBRtyW")];
+const films=[cardVideo("wedding-flyn","Flyn Wedding","1fvFfJ99o7NnnjhQjFqSh1pcvqk74eVKi"),cardVideo("wedding-michelle","Michelle","1ucxYm0KeRX02tqBe7vFi4FnBKqe2vtJf"),cardVideo("wedding-samantha-luke","Samantha + Luke","1oT6IukWaWPPpEkLpneynebM-QQtvRr2n")];
+const reels=[cardVideo("estate-bali","Bali home","1MbEQGvQ3RyDIFF-FUcf4ySh84_x7YGud"),cardVideo("estate-k2c","K2C Remodeling","1w-mKZ86wf4SVGdABjZhJeDJgji704nBN"),{type:'video',src:`${R}estate-06.mp4`,thumb:`${R}estate-06.webp`,cap:'Property showcase',vertical:true,slug:'estate-tour'}];
 const socialClips=[cardVideo("social-01","Social reel 1","1RjXWJwwX778rKiKU0D-VnpNfvSoWXbmY"),cardVideo("social-02","Social reel 2","1CezZp1kD98REXsdyfRLkO97I3i6Fraib"),cardVideo("social-03","Social reel 3","1ENvkDsKl6PDz65L6v6m5Mm2Fj6yGJeP9")];
 const portfolio={
  design:{kind:'Graphic design',title:'Say it in one glance',items:[img('design-bakistry-lotus','Bakistry — Lotus cheesecake jar.'),img('design-bakistry-crumbly','Bakistry — Crumbly cheesecake delight.'),img('design-manso-summer','Manso — the new summer collection.'),img('design-manso-arrival-ar','Manso — “Just arrived”, Arabic edition.'),img('design-manso-arrival','Manso — New arrival.'),img('design-dainely-belt','Dainely — let your belt handle it.'),img('design-dainely-back','Dainely — your lower back is the engine.'),img('design-edvana','Edvana Online Institute — subjects and enrolment.'),img('design-carousel','Interior studio — Instagram carousel.')]},
@@ -141,7 +141,7 @@ const portfolio={
  social:{kind:'Social media content',title:'Content built to stop the scroll.',items:socialClips},
  socialResults:{kind:'Social media management',title:'Same time, every time',items:[img('social-insights-7d','Instagram — 2,460 views in 7 days; accounts reached up 495.7%.'),img('social-insights-30d','Instagram — 8,811 views in 30 days; 6,063 accounts reached, up 15,057.5%.'),img('social-insights-reach','Instagram — 6,297 accounts reached, up 17,891.4%.')]}
 };
-[...reels,...films].forEach(item=>{const slug=item.thumb.split('/').pop().replace('.webp','');portfolio[slug]={kind:slug.startsWith('estate-')?'Real estate video':'Wedding video editing',title:item.cap,items:[item]}});
+[...reels,...films].forEach(item=>{const slug=item.slug||item.thumb.split('/').pop().replace('.webp','');portfolio[slug]={kind:slug.startsWith('estate-')?'Real estate video':'Wedding video editing',title:item.cap,items:[item]}});
 // A sample month built from the studio's real posts.
 function calendarBoard(){
  const posts=[['design-bakistry-lotus','Product'],['paid-reddish-winter','Offer'],['design-manso-arrival','Launch'],['design-dainely-back','Story'],['brand-bunboy-hero','Campaign'],['paid-freshtaa-sale','Offer'],['design-edvana','Enrolment'],['design-bakistry-crumbly','Product'],['paid-reddish-floral','Offer'],['design-dainely-belt','Story'],['design-manso-summer','Collection'],['paid-falcon-christmas','Seasonal']];
